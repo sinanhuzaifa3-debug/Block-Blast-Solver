@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Block Blast Solver (Hint System)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>Block Blast Solver</h1>
+        <p class="subtitle">Hint system for 8×8 Block Blast</p>
+      </header>
+
+      <main class="main">
+        <section class="board-section">
+          <h2 class="section-title">Current Board (8×8)</h2>
+          <div id="main-board" class="grid board-grid" aria-label="Main board"></div>
+          <div class="board-controls">
+            <button id="clear-board-btn" class="btn">Clear Board</button>
+          </div>
+        </section>
+
+        <section class="blocks-section">
+          <h2 class="section-title">Upcoming Blocks (exact shapes)</h2>
+          <p class="hint">
+            Draw each incoming block on its 5×5 grid. Shapes must match the
+            in-game orientation. Click cells to toggle.
+          </p>
+          <div class="blocks-container">
+            <div class="block-input">
+              <h3>Block 1</h3>
+              <div
+                id="block-0"
+                class="grid block-grid"
+                aria-label="Block 1 grid"
+              ></div>
+            </div>
+            <div class="block-input">
+              <h3>Block 2</h3>
+              <div
+                id="block-1"
+                class="grid block-grid"
+                aria-label="Block 2 grid"
+              ></div>
+            </div>
+            <div class="block-input">
+              <h3>Block 3</h3>
+              <div
+                id="block-2"
+                class="grid block-grid"
+                aria-label="Block 3 grid"
+              ></div>
+            </div>
+          </div>
+          <div class="blocks-controls">
+            <button id="clear-blocks-btn" class="btn">Clear Blocks</button>
+            <button id="solve-btn" class="btn btn-primary">Solve</button>
+          </div>
+        </section>
+      </main>
+
+      <section class="output-section">
+        <h2 class="section-title">Recommended Move Sequence</h2>
+        <div id="message" class="message"></div>
+        <ol id="instructions" class="instructions"></ol>
+        <p class="legend">
+          <span class="legend-item legend-0">Block 1 placement</span>
+          <span class="legend-item legend-1">Block 2 placement</span>
+          <span class="legend-item legend-2">Block 3 placement</span>
+        </p>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
